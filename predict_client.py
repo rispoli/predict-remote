@@ -20,7 +20,7 @@ class PredictFactory(protocol.ClientFactory):
         self.out_file = out_file
 
     def clientConnectionFailed(self, connector, reason):
-        print "Connection failed: " + reason
+        print "Connection failed: " + reason.getErrorMessage()
         reactor.stop()
 
     def clientConnectionLost(self, connector, reason):
